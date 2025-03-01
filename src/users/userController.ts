@@ -2,7 +2,7 @@ import { Request, Response } from 'express';
 import UserModel from './userModel';
 import { comparePassword, hashPassword } from '../utils/passwordUtils';
 import { generateToken } from '../utils/jwtUtils';
-import { userSchema } from '../utils/validate'; // นำเข้า userSchema
+import { loginSchema, userSchema } from '../utils/validate'; // นำเข้า userSchema
 
 class UserController {
   private userModel: UserModel;
@@ -62,8 +62,9 @@ class UserController {
   public login = async (req: Request, res: Response): Promise<void> => {
     const { email, password } = req.body;
 
-    const loginSchema = userSchema.extract(['email', 'password']);
+    // ใช้ loginSchema เพื่อ validate email และ password
     const { error } = loginSchema.validate(req.body);
+
     if (error) {
       const errorMessage = error.details
         .map((detail) => detail.message)

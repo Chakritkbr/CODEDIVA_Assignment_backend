@@ -70,4 +70,19 @@ const productSchema = Joi.object({
   }),
 });
 
-export { userSchema, categorySchema, productSchema };
+const loginSchema = Joi.object({
+  email: Joi.string().email().required().messages({
+    'string.base': 'อีเมลต้องเป็นข้อความ',
+    'string.email': 'รูปแบบอีเมลไม่ถูกต้อง',
+    'string.empty': 'กรุณากรอกอีเมล',
+    'any.required': 'กรุณากรอกอีเมล',
+  }),
+  password: Joi.string().min(6).required().messages({
+    'string.base': 'รหัสผ่านต้องเป็นข้อความ',
+    'string.min': 'รหัสผ่านต้องมีความยาวอย่างน้อย 6 ตัวอักษร',
+    'string.empty': 'กรุณากรอกรหัสผ่าน',
+    'any.required': 'กรุณากรอกรหัสผ่าน',
+  }),
+});
+
+export { userSchema, categorySchema, productSchema, loginSchema };
