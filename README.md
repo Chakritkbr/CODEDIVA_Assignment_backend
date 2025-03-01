@@ -1,6 +1,6 @@
-# Assignment Backend
+# Codediva Assignment
 
-นี้ประกอบด้วยโค้ดส่วน Backend สำหรับเว็บแอปพลิเคชันที่สร้างขึ้นเพื่อเป็นส่วนหนึ่งของ Assignment สร้างขึ้นโดยใช้ Node.js, Express, TypeScript และ Prisma ORM โดยมี API สำหรับจัดการผู้ใช้ สินค้า และหมวดหมู่สินค้า
+Repo นี้ประกอบด้วยโค้ดส่วน Backend สำหรับเว็บแอปพลิเคชันที่สร้างขึ้นเพื่อเป็นส่วนหนึ่งของ Assignment สร้างขึ้นโดยใช้ Node.js, Express, TypeScript และ Prisma ORM โดยมี API สำหรับจัดการผู้ใช้ สินค้า และหมวดหมู่สินค้า
 
 ## โครงสร้างโปรเจกต์
 
